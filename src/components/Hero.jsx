@@ -1,16 +1,15 @@
-import Spline from '@splinetool/react-spline';
-
 export default function Hero() {
   return (
     <section className="relative min-h-[80vh] w-full overflow-hidden bg-gradient-to-b from-white via-sky-50 to-white">
-      <div className="absolute inset-0">
-        <Spline scene="https://prod.spline.design/41MGRk-UDPKO-l6W/scene.splinecode" style={{ width: '100%', height: '100%' }} />
+      {/* Static visual background fallback (no 3D) */}
+      <div className="pointer-events-none absolute inset-0">
+        <div className="absolute -top-24 left-1/2 h-[600px] w-[900px] -translate-x-1/2 rounded-full bg-[radial-gradient(circle_at_center,_rgba(59,130,246,0.18),_transparent_60%)] blur-2xl" />
+        <div className="absolute -bottom-32 right-1/3 h-[520px] w-[520px] rounded-full bg-[radial-gradient(circle_at_center,_rgba(14,165,233,0.18),_transparent_60%)] blur-2xl" />
+        <div className="absolute top-1/3 -left-20 h-[420px] w-[420px] rounded-full bg-[radial-gradient(circle_at_center,_rgba(147,197,253,0.2),_transparent_60%)] blur-2xl" />
       </div>
 
       {/* gentle gradients that don't block interaction */}
       <div className="pointer-events-none absolute inset-0 bg-gradient-to-b from-white/70 via-transparent to-white" />
-      <div className="pointer-events-none absolute -left-10 top-24 h-72 w-72 rounded-full bg-sky-100 blur-3xl opacity-70" />
-      <div className="pointer-events-none absolute -right-10 bottom-24 h-72 w-72 rounded-full bg-blue-100 blur-3xl opacity-70" />
 
       <div className="relative mx-auto flex max-w-7xl items-center px-6 pt-24 pb-16 lg:px-8">
         <div className="max-w-2xl">
