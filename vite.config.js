@@ -1,7 +1,7 @@
 import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
 
-// Simplified server config to ensure the preview domain is accepted by default
+// Dev server configured to accept the preview host domain used by the sandbox
 export default defineConfig({
   plugins: [react()],
   optimizeDeps: {
@@ -13,8 +13,12 @@ export default defineConfig({
     port: 3000,
     host: '0.0.0.0',
     strictPort: true,
-    // Use Vite defaults for HMR and file watching; environments may inject their own settings
-    // Removing allowedHosts to avoid blocking unknown preview subdomains
-    cors: true
+    cors: true,
+    // Explicitly allow the hosted preview domain to connect
+    allowedHosts: [
+      'localhost',
+      '127.0.0.1',
+      'ta-01k9pn25n4kck8sjwxx1b6z8bc-3000.wo-zs3wsa8dv9gmms3i94h9qt6ny.w.modal.host'
+    ]
   }
 })
